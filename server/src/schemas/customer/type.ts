@@ -1,29 +1,30 @@
 import { gql } from "apollo-server-express";
+import { EmailAddress, PhoneNumber, PostalCode } from 'graphql-scalars/typings/typeDefs';
 
 
 export const CustomerType = gql`
 
-  type Customer implements ICustomer {
-    # id: ID!
-    email: EmailAddress
+  type Customer {
+    # email: EmailAddress
+    email: String
     forename: String!
     surname: String!
-    contactNumber: PhoneNumber
-    postcode: PostalCode
+    # contactNumber: PhoneNumber
+    contactNumber: Int
+    # postcode: PostalCode
+    postcode: String
   }
 
   type Query {
     getAllCustomers: [Customer] 
-    getCustomer(arg:any!): Customer 
+    getCustomer(arg:String!): Customer 
    }
-
 `;
-
-// module.exports = typeDefs;
 
 
 // export const CustomerType = `
-//   type Customer {
+
+//   type Customer{
 //     # id: ID!
 //     email: EmailAddress
 //     forename: String!
@@ -34,6 +35,6 @@ export const CustomerType = gql`
 
 //   type Query {
 //     getAllCustomers: [Customer] 
-//     getCustomer(id: ID!): Customer 
+//     getCustomer(arg:any!): Customer 
 //    }
 // `;

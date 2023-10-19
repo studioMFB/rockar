@@ -1,10 +1,11 @@
 import { gql } from 'apollo-server-express';
+import { LocalDateTypeDefinition } from 'graphql-scalars';
 import { CustomerType, CustomerQuery } from './customer';
 import { ProductType, ProductQuery } from './product';
 
 
 // remember we only use gql in this file. types in other files are just simple strings
-export const typeDefs = gql`
+export const schemas = gql`
      type Query
      ${CustomerType}
      ${ProductType}
