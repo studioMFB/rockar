@@ -1,4 +1,5 @@
-import {customers} from "./data";
+// import {customers} from "./data";
+import customers from "./data";
 
 
 export const CustomerQuery = {

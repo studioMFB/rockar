@@ -5,6 +5,7 @@ import { EmailAddress, PhoneNumber, PostalCode } from 'graphql-scalars/typings/t
 export const CustomerType = gql`
 
   type Customer {
+    id: ID!
     # email: EmailAddress
     email: String
     forename: String!
@@ -17,7 +18,7 @@ export const CustomerType = gql`
 
   type Query {
     getAllCustomers: [Customer] 
-    getCustomer(arg:String!): Customer 
+    getCustomer(id:ID!): Customer 
    }
 `;
 
