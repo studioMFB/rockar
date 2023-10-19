@@ -84,7 +84,7 @@
 To install the modules for the Server and the Client respectively, run these commands in two separate terminal windows from the root:
 
 ```bash
-cd server && npm i
+cd server && npm i && npm install -g ts-node
 ```
 
 and

@@ -1,18 +1,12 @@
 // import {customers} from "./data";
 import customers from "./data";
+import { ICustomer } from "./interface";
 
 
 export const CustomerQuery = {
     getAllCustomers: () => customers,
 
-    getCustomer: (_: any, arg: String) => { 
-      const customer = customers.find((customer) => customer.surname == arg);
-
-      if(customer){
-        return customer;
-      }
-      else{
-        return console.log("No costumer with this username was found!");
-      }
+    getCustomer: (root:any, args:ICustomer) => { 
+      return customers.find((customer) => customer.forename.toLowerCase() == args.forename.toLowerCase());
     },
 };

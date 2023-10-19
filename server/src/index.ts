@@ -2,7 +2,7 @@ import http from "http";
 import express from "express";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
-import { schemas, resolvers } from "./schemas/index";
+import { typeDefs, resolvers } from "./schemas/index";
 
 
 async function startApolloServer(schema: any, resolvers: any) {
@@ -28,4 +28,14 @@ async function startApolloServer(schema: any, resolvers: any) {
 }
 
 // Run the server.
-startApolloServer(schemas, resolvers);
+startApolloServer(typeDefs, resolvers);
+
+
+// const server = new ApolloServer({ typeDefs, resolvers });
+// export const config = {
+//     api: {
+//         bodyParser: false,
+//     },
+// };
+
+// export default server.createHandler({ path: '/api/graphql' });

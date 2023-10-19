@@ -1,10 +1,10 @@
-import { products } from "../product/data";
+import products from "../product/data";
 
 
 export const ProductQuery = {
   getAllProducts: () => products,
 
   getProduct: (_: any, args: any) => {
-    return products.find((product) => product.colour === args.colour);
+    return products.find((product) => product.colour.toLowerCase() === args.colour.toLowerCase());
   },
 };

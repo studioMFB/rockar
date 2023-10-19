@@ -13,24 +13,7 @@ export const ProductType = gql`
 
   type Query {
     getAllProducts: [Product] 
-    getProduct(arg: String!): Product 
+    getProduct(colour: String!): Product 
    }
 `;
-
-
-// export const ProductType =`
-
-//   type Product {
-//     vin: String!
-//     make: String!
-//     colour: String!
-//     model: String!
-//     price: Int!
-//   }
-
-//   type Query {
-//     getAllProducts: [Product] 
-//     getProduct(arg: any!): Product 
-//    }
-// `;
 

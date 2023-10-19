@@ -4,38 +4,16 @@ import { EmailAddress, PhoneNumber, PostalCode } from 'graphql-scalars/typings/t
 
 export const CustomerType = gql`
 
-  type Customer {
-    id: ID!
-    # email: EmailAddress
+  type Customer{
     email: String
     forename: String!
     surname: String!
-    # contactNumber: PhoneNumber
     contactNumber: Int
-    # postcode: PostalCode
     postcode: String
   }
 
   type Query {
     getAllCustomers: [Customer] 
-    getCustomer(id:ID!): Customer 
+    getCustomer(forename: String): Customer 
    }
 `;
-
-
-// export const CustomerType = `
-
-//   type Customer{
-//     # id: ID!
-//     email: EmailAddress
-//     forename: String!
-//     surname: String!
-//     contactNumber: PhoneNumber
-//     postcode: PostalCode
-//   }
-
-//   type Query {
-//     getAllCustomers: [Customer] 
-//     getCustomer(arg:any!): Customer 
-//    }
-// `;
