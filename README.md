@@ -69,6 +69,7 @@
 ### Built With
 
 * [![Next][Next.js]][Next-url]
+* [![Apollo][Apollo]][Apollo-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
