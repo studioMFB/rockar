@@ -2,7 +2,7 @@ import http from "http";
 import express from "express";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
-import { typeDefs, resolvers } from "./schemas/index";
+import { typeDefs, resolvers } from "./graphql/graphql.index";
 import 'dotenv/config';// Needed to access ENV variables.
 
 
