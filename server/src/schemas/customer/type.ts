@@ -14,6 +14,6 @@ export const CustomerType = gql`
 
   type Query {
     getAllCustomers: [Customer] 
-    getCustomer(forename: String): Customer 
+    getCustomer(arg: String): Customer 
    }
 `;

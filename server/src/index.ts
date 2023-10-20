@@ -3,6 +3,10 @@ import express from "express";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schemas/index";
+import 'dotenv/config';// Needed to access ENV variables.
+
+
+// const DEFAULT_URL = `${document.location.protocol}//${document.location.host}`;
 
 
 async function startApolloServer(schema: any, resolvers: any) {
@@ -23,8 +27,8 @@ async function startApolloServer(schema: any, resolvers: any) {
     await new Promise<void>((resolve) =>
         httpServer.listen({ port: 4000 }, resolve)
     );
-
     console.log(`Server ready at http://localhost:4000${server.graphqlPath}`);
+    // console.log(`Server ready at ${DEFAULT_URL}:4000${server.graphqlPath}`);
 }
 
 // Run the server.
