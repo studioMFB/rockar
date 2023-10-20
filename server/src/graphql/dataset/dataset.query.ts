@@ -11,7 +11,7 @@ export const DatasetQuery = {
     getData: async (root:any, args: IDataset) => {
         const useCsv: string | undefined = process.env.USE_CSV;
         const dirPath: string | undefined = process.env.CSV_DIR_PATH;
-        const filename: string = args.filename;
+        const filename: string = args.filename || "customer";
 
         console.log("process.env.USE_CSV ", useCsv);
         console.log("process.env.CSV_DIR_PATH ", dirPath);
