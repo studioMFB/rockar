@@ -1,8 +1,9 @@
-import { ExecException } from "child_process";
 import csv from "csvtojson";
-import { IDataset } from "./interface";
-import { ICustomer } from "../customer/interface";
+import { IDataset } from "./dataset.interface";
 // import someDatabaseClient from './';
+
+
+const ERROR_MSG = "Cannot connect to any data source";
 
 
 export const DatasetQuery = {
@@ -25,7 +26,7 @@ export const DatasetQuery = {
 
                     const jsonData = await csv().fromFile(filePath);
                     console.log("jsonData ", jsonData);
-                    
+
                     return jsonData;
 
                 } else if (useCsv === 'false') {
@@ -34,12 +35,12 @@ export const DatasetQuery = {
                     // return data;
                 }
                 else {
-                    throw new Error("Can not connect to any data source");
+                    throw new Error(ERROR_MSG);
                 }
             }
 
         } catch {
-            throw new Error("Can not connect to any data source");
+            throw new Error(ERROR_MSG);
         }
 
     }

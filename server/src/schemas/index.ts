@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express';
-import { CustomerType, CustomerQuery } from './customer';
-import { ProductType, ProductQuery } from './product';
-import { DatasetType, DatasetQuery } from './dataset';
+import { CustomerType, CustomerQuery } from './customer/customer.index';
+import { ProductType, ProductQuery } from './product/product.index';
+import { DatasetType, DatasetQuery } from './dataset/dataset.index';
 
 
 // Only use gql in this file. types in other files are just simple strings

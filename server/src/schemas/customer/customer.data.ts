@@ -1,4 +1,4 @@
-import { ICustomer } from "./interface";
+import { ICustomer } from "./customer.interface";
 
 
 // const customers:  { email: string; forename: string; surname: string; contactNumber: number; postcode: string; }[] = [

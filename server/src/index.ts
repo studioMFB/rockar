@@ -6,15 +6,12 @@ import { typeDefs, resolvers } from "./schemas/index";
 import 'dotenv/config';// Needed to access ENV variables.
 
 
-// const DEFAULT_URL = `${document.location.protocol}//${document.location.host}`;
-
-
 async function startApolloServer(schema: any, resolvers: any) {
     const app = express();
     const httpServer = http.createServer(app);
     const server = new ApolloServer({
         typeDefs: schema,
-        resolvers,
+        resolvers: resolvers,
         // Tell Express to attach GraphQL functionality to the server.
         plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     }) as any;
@@ -24,22 +21,13 @@ async function startApolloServer(schema: any, resolvers: any) {
 
     server.applyMiddleware({ app });
 
+    const port = process.env.PORT;
+
     await new Promise<void>((resolve) =>
-        httpServer.listen({ port: 4000 }, resolve)
+        httpServer.listen({ port: port }, resolve)
     );
-    console.log(`Server ready at http://localhost:4000${server.graphqlPath}`);
-    // console.log(`Server ready at ${DEFAULT_URL}:4000${server.graphqlPath}`);
+    console.log(`Server ready at http://localhost:${port}${server.graphqlPath}`);
 }
 
 // Run the server.
 startApolloServer(typeDefs, resolvers);
-
-
-// const server = new ApolloServer({ typeDefs, resolvers });
-// export const config = {
-//     api: {
-//         bodyParser: false,
-//     },
-// };
-
-// export default server.createHandler({ path: '/api/graphql' });

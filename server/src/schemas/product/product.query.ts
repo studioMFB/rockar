@@ -1,4 +1,4 @@
-import products from "../product/data";
+import products from "./product.data";
 
 
 export const ProductQuery = {

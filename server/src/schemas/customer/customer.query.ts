@@ -1,6 +1,6 @@
 // import {customers} from "./data";
-import customers from "./data";
-import { ICustomer } from "./interface";
+import customers from "./customer.data";
+import { ICustomer } from "./customer.interface";
 
 
 export const CustomerQuery = {
